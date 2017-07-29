@@ -10257,7 +10257,7 @@ var data = [{"id":1,"title":"Fuke zisukje bu dibas sik.","description":"Jusola m
 $(document).ready(function(){
 
 	data.forEach(function(element){
-		$(".container").append('<div class="pin"><a id="' + element.id + '"><img src="../../dist/img/' + element.image_url + '" class="responsive"></img></a>' + '<p>title: ' + element.title + '</p>' + '<p>description: ' + element.description + '</p>' + '<p>user: ' + element.user + '</p>' + '</div>');
+		$(".pines").append('<div class="pin"><a id="' + element.id + '"><img src="../../dist/img/' + element.image_url + '" class="responsive"></img></a>' + '<div class="row">' + '<span class="title">' + element.title + '</span>' + '<p>' + element.description + '</p>' + '<p>' + '<img src="docs/user-pinterest.png" class="profile"></img>' + element.user + ' #hashtag</p>' + '</div>' + '</div>');
 		
 
 		$("#" + element.id).click(function(){

@@ -28,9 +28,6 @@ body {
 .container {
 	width: 80%;
 	margin-left: 10%;
-	display: flex;
-	justify-content: flex-start;
-	flex-wrap: wrap;
 }
 
 .row {
@@ -45,6 +42,11 @@ body {
 .responsive {
 	width: 100%;
 	max-width: 100%;
+}
+
+.title {
+	font-size: 120%;
+	font-weight: bold;
 }
 
 /*-------- modal ----------*/
@@ -91,4 +93,20 @@ body {
 	/*height: auto;*/
 	margin: 10px;
 	box-sizing: border-box;
+	cursor: pointer;
+	img {
+		border-radius: 20px;
+	}
+}
+
+.pines {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	.profile {
+		width: 25px;
+		margin-right: 3px;
+		position: relative;
+		top: 3px;
+	}
 }
