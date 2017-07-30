@@ -28,7 +28,8 @@ body {
 
 .container {
 	width: 80%;
-	margin-left: 10%;
+	/*margin-left: 10%;*/
+	margin: 3% auto;
 }
 
 .row {
@@ -143,11 +144,9 @@ body {
 
 .pin {
 	width: 230px;
-	height: auto !important;
 	margin: 10px;
 	box-sizing: border-box;
 	cursor: pointer;
-	position: relative;
 	img {
 		border-radius: 20px;
 	}
@@ -172,37 +171,3 @@ body {
 	}
 }
 
-/* overlay */
-.btn {
-	display: none;
-}
-
-.overlay {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 100%;
-	width: 100%;
-	transition: .5s ease;
-	background-color: transparent;
-	/*z-index:5;*/
-}
-
-.cont-img:hover .overlay {
-	background-color: rgba(250,250,250,.9);
-}
-
-.cont-img:hover .overlay .btn {
-	height: 95%;
-	width: 95%;
-	display: block;
-	color: black;
-	font-size: 10px;
-	position: absolute;
-	top: 5%;
-	left: 5%;
-	/*transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);*/
-}
