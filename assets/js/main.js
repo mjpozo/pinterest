@@ -14,13 +14,23 @@ $(document).ready(function(){
 			$(".modal").hide();
 		});
 	});*/
-	for (i=0 ; i<20 ; i++){
-		$(".pines").append('<div class="pin"><a id="' + data[i].id + '"><img src="../../dist/img/' + data[i].image_url + '" class="responsive"></img></a>' + '<div class="row">' + '<span class="title">' + data[i].title + '</span>' + '<p class="desc">' + data[i].description + '</p>' + '<p class="profile-text">' + '<img src="docs/user-pinterest.png" class="profile"></img>' + data[i].user + ' #' + data[i].hashtag + '</p>' + '</div>' + '</div>');
+
+	var primerData = [];
+	var segundoData = [];
+	for(i=0 ; i<20 ; i++){
+		primerData.push(data[i]);
+	}
+	for(i=20 ; i<40 ; i++){
+		segundoData.push(data[i]);
+	}
+
+	function caja(e){
+		$(".pines").append('<div class="pin"><a id="' + e.id + '"><img src="../../dist/img/' + e.image_url + '" class="responsive"></img></a>' + '<div class="row">' + '<span class="title">' + e.title + '</span>' + '<p class="desc">' + e.description + '</p>' + '<p class="profile-text">' + '<img src="docs/user-pinterest.png" class="profile"></img>' + e.user + ' #' + e.hashtag + '</p>' + '</div>' + '</div>');
 		
 
-		$("#" + data[i].id).click(function(){
+		$("#" + e.id).click(function(){
 			$(".modal-info").empty();
-			$(".modal-info").append('<div class="cont-modal">' + '<div class="row">' + '<i class="fa fa-upload" aria-hidden="true"></i>' + '<i class="fa fa-check" aria-hidden="true"></i>' + '<i class="fa fa-ellipsis-h" aria-hidden="true"></i>' + '<button><i class="fa fa-thumb-tack" aria-hidden="true"></i> Guardar</button>' + '</div>' + '<p class="title" id="' + data[i].id + '">' + data[i].title + '</p>' + '<a id="' + data[i].id + '"><img src="../../dist/img/' + data[i].image_url + '" class="responsive"></img></a>' + '<div class="row">' + '<i class="fa fa-upload" aria-hidden="true"></i>' + '<i class="fa fa-check" aria-hidden="true"></i>' + '<i class="fa fa-ellipsis-h" aria-hidden="true"></i>' + '<button><i class="fa fa-thumb-tack" aria-hidden="true"></i> Guardar</button>' + '</div>' + '<img src="docs/user-pinterest.png" class="profile"></img>' + '<span>' + data[i].user + ' #' + data[i].hashtag + '</span>' + '<button>Leerlo</button>' + '<p id="' + data[i].id + '" class="desc">' + data[i].description + '</p>' + '</div>');
+			$(".modal-info").append('<div class="cont-modal">' + '<div class="row">' + '<i class="fa fa-upload" aria-hidden="true"></i>' + '<i class="fa fa-check" aria-hidden="true"></i>' + '<i class="fa fa-ellipsis-h" aria-hidden="true"></i>' + '<button><i class="fa fa-thumb-tack" aria-hidden="true"></i> Guardar</button>' + '</div>' + '<p class="title" id="' + e.id + '">' + e.title + '</p>' + '<a id="' + e.id + '"><img src="../../dist/img/' + e.image_url + '" class="responsive"></img></a>' + '<div class="row">' + '<i class="fa fa-upload" aria-hidden="true"></i>' + '<i class="fa fa-check" aria-hidden="true"></i>' + '<i class="fa fa-ellipsis-h" aria-hidden="true"></i>' + '<button><i class="fa fa-thumb-tack" aria-hidden="true"></i> Guardar</button>' + '</div>' + '<img src="docs/user-pinterest.png" class="profile"></img>' + '<span>' + e.user + ' #' + e.hashtag + '</span>' + '<button>Leerlo</button>' + '<p id="' + e.id + '" class="desc">' + e.description + '</p>' + '</div>');
 			$(".modal").show();
 		});
 		$("span").click(function(){
@@ -28,23 +38,15 @@ $(document).ready(function(){
 		});
 	}
 
-	//en vez de ser un foreach se ua un for del 1 al 20 y dentro del if se pone la condicion del 21 al 40
+	primerData.forEach(function(element){
+		caja(element);
+	});
+
 	$(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-       for (i=20 ; i<40 ; i++){
-		$(".pines").append('<div class="pin"><a id="' + data[i].id + '"><img src="../../dist/img/' + data[i].image_url + '" class="responsive"></img></a>' + '<div class="row">' + '<span class="title">' + data[i].title + '</span>' + '<p class="desc">' + data[i].description + '</p>' + '<p class="profile-text">' + '<img src="docs/user-pinterest.png" class="profile"></img>' + data[i].user + ' #' + data[i].hashtag + '</p>' + '</div>' + '</div>');
-		
-
-		$("#" + data[i].id).click(function(){
-			$(".modal-info").empty();
-			$(".modal-info").append('<div class="cont-modal">' + '<div class="row">' + '<i class="fa fa-upload" aria-hidden="true"></i>' + '<i class="fa fa-check" aria-hidden="true"></i>' + '<i class="fa fa-ellipsis-h" aria-hidden="true"></i>' + '<button><i class="fa fa-thumb-tack" aria-hidden="true"></i> Guardar</button>' + '</div>' + '<p class="title" id="' + data[i].id + '">' + data[i].title + '</p>' + '<a id="' + data[i].id + '"><img src="../../dist/img/' + data[i].image_url + '" class="responsive"></img></a>' + '<div class="row">' + '<i class="fa fa-upload" aria-hidden="true"></i>' + '<i class="fa fa-check" aria-hidden="true"></i>' + '<i class="fa fa-ellipsis-h" aria-hidden="true"></i>' + '<button><i class="fa fa-thumb-tack" aria-hidden="true"></i> Guardar</button>' + '</div>' + '<img src="docs/user-pinterest.png" class="profile"></img>' + '<span>' + data[i].user + ' #' + data[i].hashtag + '</span>' + '<button>Leerlo</button>' + '<p id="' + data[i].id + '" class="desc">' + data[i].description + '</p>' + '</div>');
-			$(".modal").show();
-		});
-		$("span").click(function(){
-			$(".modal").hide();
-		});
-	}
-   }
-});
-
+		if($(window).scrollTop() + $(window).height() == $(document).height()) {
+			segundoData.forEach(function(element){
+				caja(element);
+			});
+		}
+	});
 })
