@@ -10298,12 +10298,10 @@ $(document).ready(function(){
 	});
 
 	$(window).scroll(function() {
-		var x=0;
-		if($(window).scrollTop() + $(window).height() == $(document).height() && x==0) {
+		if($(window).scrollTop() + $(window).height() == $(document).height()) {
 			segundoData.forEach(function(element){
 				caja(element);
 			});
-			x++;
 		}
 	});
 })
