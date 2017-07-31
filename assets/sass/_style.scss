@@ -10,25 +10,8 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-[class*="col-"]{
-	min-height: 7px;
-	padding: 12px;
-	float: left;
-}
-
-@function anchoDeColumnas($i){
-	@return percentage(($i/12));
-}
-
-@for $i from 1 through 12 {
-	.col-#{$i} {
-		width: anchoDeColumnas($i)
-	}
-}
-
 .container {
 	width: 80%;
-	/*margin-left: 10%;*/
 	margin: 3% auto;
 }
 
@@ -37,25 +20,10 @@ body {
 }
 
 nav {
-	padding: 2% 1%;
-	.fa-sort-desc {
-		position: relative;
-		top: -2px;
-	}
 	p {
-		margin-top: 3px;
-		margin-left: 2px;
 		color: rgb(178, 178, 178);
-		font-size: 90%;
 		position: relative;
 		top: 2px;
-	}
-	input {
-		width: 70%;
-		padding: 2px 4px;
-	}
-	button {
-		padding: 2px 4px;
 	}
 	.bars,
 	.commenting {
@@ -63,9 +31,6 @@ nav {
 		background: white;
 		color: rgb(178, 178, 178);
 		border: 1px solid white;
-		.fa {
-			font-size: 150%;
-		}
 	}
 }
 
@@ -75,9 +40,30 @@ nav {
 }
 
 .logo, .photo {
-	width: 25px;
-	height: 25px;
 	border-radius: 50%;
+}
+
+.cont-search {
+	display: flex;
+	justify-content: space-between;
+	span {
+		background: rgb(188, 155, 122);
+		border-radius: 10px;
+		a {
+			text-decoration: none;
+			color: white;
+		}
+	}
+	button {
+		padding: 0 1%;
+		background: whitesmoke;
+		border: 1px solid whitesmoke;
+		font-weight: bold;
+	}
+}
+
+button {
+	cursor: pointer;
 }
 
 .responsive {
@@ -90,7 +76,6 @@ nav {
 }
 
 /*-------- modal ----------*/
-/* The Modal (background) */
 .modal {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
@@ -107,17 +92,15 @@ nav {
 /* Modal Content/Box */
 .modal-content {
 	background-color: rgba(0,0,0,0.4); /*rgb(238, 238, 238)*/;
-	/*margin: 3% auto;*/ /* 3% from the top and centered */
 	padding: 20px;
 	overflow: auto;
-	/*border: 1px solid #888;*/
 	width: 98vw; /* Could be more or less, depending on screen size */
 	box-sizing: border-box;
 }
 
 .modal-info {
 	.cont-modal {
-		width: 300px;
+		width: 30%;
 		margin: 1% auto;
 		padding: 0 2% 2% 2%;
 		background-color: white;
@@ -136,7 +119,6 @@ nav {
 			}
 		}
 		button {
-				padding: 6px 10px;
 				color: rgb(91, 91, 91);
 				background: rgb(238, 238, 238);
 				border: 1px solid rgb(238, 238, 238);
@@ -150,16 +132,10 @@ nav {
 		.title {
 			margin-bottom: 2%;
 		}
-		span {
-			font-size: 10px;
-		}
 		.desc {
 			margin: 3% 0;
-			font-size: 11px;
 		}
 		.profile {
-			width: 25px;
-			margin-right: 3px;
 			position: relative;
 			top: 3px;
 		}
@@ -170,7 +146,6 @@ nav {
 .close {
 	color: #aaa;
 	float: right;
-	font-size: 28px;
 	font-weight: bold;
 }
 
@@ -210,3 +185,119 @@ nav {
 	}
 }
 
+
+@media (min-width: 800px) and (max-width:1400px){
+	.close{
+		font-size: 28px;
+	}
+	nav {
+		padding: 1% 2% 0 2%;
+		p {
+			margin-top: 3px;
+			margin-left: 2px;
+			font-size: 90%;
+			top: 2px;
+		}
+		input {
+			width: 70%;
+			padding: 2px 4px;
+		}
+		button {
+			padding: 2px 4px;
+		}
+		.bars,
+		.commenting {
+			.fa {
+				font-size: 150%;
+			}
+		}
+	}
+	.logo, .photo {
+		width: 25px;
+		height: 25px;
+	}
+	.cont-search {
+		span {
+			padding: 8px 10px;
+			a {
+				font-size: 90%;
+			}
+		}
+	}
+	.cont-modal {
+		button {
+				padding: 6px 10px;
+			}
+		.title {
+			margin-bottom: 2%;
+		}
+		span {
+			font-size: 10px;
+		}
+		.desc {
+			font-size: 11px;
+		}
+		.profile {
+			width: 25px;
+			margin-right: 3px;
+		}
+	}
+}
+
+@media (min-width: 1401px) and (max-width:2400px){
+	.close{
+		font-size: 40px;
+	}
+	nav {
+		padding: 1% 2% 0 2%;
+		p {
+			margin-top: 6px;
+			margin-left: 4px;
+			font-size: 110%;
+			top: 2px;
+		}
+		input {
+			width: 70%;
+			padding: 4px 8px;
+		}
+		button {
+			padding: 4px 8px;
+		}
+		.bars,
+		.commenting {
+			.fa {
+				font-size: 180%;
+			}
+		}
+	}
+	.logo, .photo {
+		width: 35px;
+		height: 35px;
+	}
+	.cont-search {
+		span {
+			padding: 10px 14px;
+			a {
+				font-size: 100%;
+			}
+		}
+	}
+	.cont-modal {
+		button {
+				padding: 10px 15px;
+			}
+		.title {
+			margin-bottom: 2%;
+		}
+		span {
+			font-size: 14px;
+		}
+		.desc {
+			font-size: 16px;
+		}
+		.profile {
+			width: 29px;
+			margin-right: 4px;
+		}
+	}
+}

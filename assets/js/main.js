@@ -42,11 +42,15 @@ $(document).ready(function(){
 		caja(element);
 	});
 
-	$(window).scroll(function() {
-		if($(window).scrollTop() + $(window).height() == $(document).height()) {
-			segundoData.forEach(function(element){
-				caja(element);
-			});
-		}
-	});
+	var contador = 0;
+		$(window).scroll(function() {
+			if($(window).scrollTop() + $(window).height() == $(document).height()) {
+				while (contador < 1){
+					segundoData.forEach(function(element){
+						caja(element);
+					});
+					contador++;
+				}
+			}
+		});
 })
