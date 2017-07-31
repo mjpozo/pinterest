@@ -158,8 +158,10 @@ button {
 
 .pin {
 	width: 230px;
+	height: min-content !important;
+	align-self: flex-start;
 	margin: 10px;
-	box-sizing: border-box;
+	box-sizing: /*border-box*/content-box;
 	cursor: pointer;
 	img {
 		border-radius: 20px;
